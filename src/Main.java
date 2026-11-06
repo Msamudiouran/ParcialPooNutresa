@@ -20,7 +20,7 @@ public class Main {
         Proteina gallina = new Proteina("PRO-001", "Gallina criolla", 1500, 18000, true, "gallina");
         //                              código     nombre          gramos  $/kg  fresco  duro
         Tuberculo papa = new Tuberculo("TUB-001", "Papa pastusa", 1000, 3000, true, false);
-        Tuberculo yuca = new Ingrediente("TUB-002", "Yuca", 800, 3500, true, true);
+        Tuberculo yuca = new Tuberculo("TUB-002", "Yuca", 800, 3500, true, true);
         //                            código     nombre           gramos  $/kg  fresco
         Verdura mazorca = new Verdura("VER-001", "Mazorca", 600, 4000, true);
         Verdura platano = new Verdura("VER-002", "Plátano verde", 500, 4000, true);
@@ -38,8 +38,8 @@ public class Main {
         System.out.println("¿Se aceptó un ingrediente que no está fresco? " + ollaGallina.agregarIngrediente(cebolla));
         Tuberculo name = new Tuberculo("TUB-002", "Ñame", 700, 4000, true, true);
         System.out.println("¿Se aceptó un código repetido? " + ollaGallina.agregarIngrediente(name));
-        ollaGallina.mostrarIngredientes();
-
+        ollaGallina.mostrarIngredientes(); 
+        
         System.out.println("\n=== 2. Olla del sancocho trifásico ===");
         Olla ollaTrifasica = new Olla(8000);
         ollaTrifasica.agregarIngrediente(new Proteina("PRO-101", "Gallina", 1000, 18000, true, "gallina"));
@@ -105,7 +105,7 @@ public class Main {
         System.out.printf("Ventas del día: $%.0f%n", fonda.calcularVentasDelDia());
 
         System.out.println("\n=== 6. Polimorfismo ===");
-        Proteina buscada = ollaGallina.buscarPorCodigo("PRO-001");
+        Proteina buscada = (Proteina) ollaGallina.buscarPorCodigo("PRO-001");
         System.out.println("Buscar PRO-001: " + (buscada != null ? buscada.getNombre() + " (" + buscada.getTipo() + ")" : "no encontrado"));
         Identificable conCodigo = trifasico;
         System.out.println("Como Identificable: " + conCodigo.getCodigo());
